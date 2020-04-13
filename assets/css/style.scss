@@ -1,15 +1,4 @@
 /*
-@File: Landset Template Style
-
-* This file contains the styling for the actual template, this
-is the file you need to edit to change the look of the
-template.
-
-This files table contents are outlined below>>>>>
-
-*******************************************
-*******************************************
-***** App landing 
 ** - Custom CSS
 ** - Theme defalut CSS
 ** - Navbar  CSS
@@ -22,46 +11,6 @@ This files table contents are outlined below>>>>>
 ** - Testimonial Section CSS
 ** - Newsletter CSS
 ** - Footer Section CSS
-
-**** Sass Landing Page One
-** - Banner Section CSS
-** - Trusted Company CSS
-** - Services Section CSS
-** - Why Choose Section CSS
-** - Standard Code Section CSS
-** - Mobile Apps Section CSS
-** - Counter Section CSS
-
-**** Sass Landing Page Two
-** - Banner Section CSS
-** - Service Section CSS
-** - Features Section CSS
-** - Keep Update  Section CSS
-** - Price  Section CSS
-** - Counter  Section CSS
-** - Testimonial  Section CSS
-** - Newsletter  Section CSS
-
-**** Personal Portfolio Landing Page 
-** - Banner Section CSS
-** - About Section CSS
-** - Service Section CSS
-** - Software Section CSS
-** - Showcase Section CSS
-** - Company Section CSS
-** - Testimonial Section CSS
-** - Contact Section CSS
-
-**** Creative Agency Landing Page
-** - Banner Section CSS
-** - About Section CSS
-** - Service Section CSS
-** - Work Process Section CSS
-** - Case Study Section CSS
-** - Testimonial Section CSS
-** - Pricing Section CSS
-** - Team Section CSS
-** - Newsletter Section CSS
 
 ** - Back To Top CSS
 ** - Preloader CSS
@@ -115,6 +64,26 @@ body {
     font-size: 16px;
     padding: 0;
     margin:0;
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #cbd7ef;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $green-color;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: lighten($green-color, 15%);
+    }
 }
 
 /* Defalut CSS Start */
@@ -304,6 +273,81 @@ ul {
     }
 }
 /* Navbar CSS End */
+
+/* Sponsor Widget CSS Start */
+.sponsor-widget {
+    width: 320px;
+    margin-top: 30px;
+
+    &__fixed {
+        position: fixed;
+        bottom: 5%;
+        left: 3%;
+        width: auto;
+    }
+
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+
+    background: $white-color;
+    padding: 20px;
+    box-shadow: $shadow-small;
+    border-radius: 20px;
+    z-index: 99;
+
+    .sponsor-widget__title {
+        display: inline-block;
+        float: left;
+    }
+
+    .sponsor-widget__close {
+        display: inline-block;
+        float: right;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: -10зч;
+    }
+
+    .sponsor-widget__content {
+        display: flex;
+        flex-direction: row;
+
+        .sponsor-widget__details {
+            ul {
+                padding: 0;
+                margin: 10px 0 0 10px;
+
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    i, p {
+                        display: inline-block;
+                        margin: 0;
+                        font-size: 14px;
+                    }
+
+                    i {
+                        font-size: 12px;
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+
+        .sponsor-widget__image {
+            width: 55px;
+
+            img {
+                border-radius: 50px;
+            }
+        }
+    }
+}
+
+/* Sponsor Widget CSS End */
 
 /* Banner Section CSS Start */
 .banner-bg-one {
@@ -655,6 +699,42 @@ ul {
 }
 /* Why Choose Section CSS End */
 
+/* Registers Section CSS Start */
+.registers-section {
+    background: #ecf2ff;
+
+    .section-title {
+        margin:0 0 60px;
+        text-align: left;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .registers-list {
+        height: 280px;
+        overflow:hidden;
+        overflow-y:scroll;
+
+        ul {
+            margin-right: 10px;
+        }
+    }
+
+    .registers-item {
+        padding: 10px 20px;
+        background: $white-color;
+        border-radius: 50px;
+        margin-bottom: 10px;
+
+        span {
+            margin: 0 5px;
+        }
+    }
+}
+/* Registers Section CSS End */
+
 /* Software CSS Start */
 .software-section {
     background: linear-gradient(to right bottom, $violet-color-dark, $violet-color-dark, #203458);
@@ -683,9 +763,10 @@ ul {
 
     .iframe-container {
         position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
+        width: 80%;
+        padding-bottom: 50%;
         height: 0;
+        margin: 50px auto 0;
     }
 
     .iframe-container iframe{
@@ -1103,7 +1184,7 @@ ul {
         box-shadow: 7px 5px 30px rgba(72,73,121,.15);
         border-radius:20px;
         position: relative;
-        padding: 45px 30px;
+        padding: 45px 20px;
         margin-bottom:30px;
         background: $white-color;
 
@@ -1131,6 +1212,10 @@ ul {
     }
     
     .how-card-one {
+        h3 {
+            font-size: 20px;
+        }
+
         span {
             color: rgb(153, 214, 176);
         }

@@ -1,16 +1,5 @@
 @charset "UTF-8";
 /*
-@File: Landset Template Style
-
-* This file contains the styling for the actual template, this
-is the file you need to edit to change the look of the
-template.
-
-This files table contents are outlined below>>>>>
-
-*******************************************
-*******************************************
-***** App landing 
 ** - Custom CSS
 ** - Theme defalut CSS
 ** - Navbar  CSS
@@ -23,46 +12,6 @@ This files table contents are outlined below>>>>>
 ** - Testimonial Section CSS
 ** - Newsletter CSS
 ** - Footer Section CSS
-
-**** Sass Landing Page One
-** - Banner Section CSS
-** - Trusted Company CSS
-** - Services Section CSS
-** - Why Choose Section CSS
-** - Standard Code Section CSS
-** - Mobile Apps Section CSS
-** - Counter Section CSS
-
-**** Sass Landing Page Two
-** - Banner Section CSS
-** - Service Section CSS
-** - Features Section CSS
-** - Keep Update  Section CSS
-** - Price  Section CSS
-** - Counter  Section CSS
-** - Testimonial  Section CSS
-** - Newsletter  Section CSS
-
-**** Personal Portfolio Landing Page 
-** - Banner Section CSS
-** - About Section CSS
-** - Service Section CSS
-** - Software Section CSS
-** - Showcase Section CSS
-** - Company Section CSS
-** - Testimonial Section CSS
-** - Contact Section CSS
-
-**** Creative Agency Landing Page
-** - Banner Section CSS
-** - About Section CSS
-** - Service Section CSS
-** - Work Process Section CSS
-** - Case Study Section CSS
-** - Testimonial Section CSS
-** - Pricing Section CSS
-** - Team Section CSS
-** - Newsletter Section CSS
 
 ** - Back To Top CSS
 ** - Preloader CSS
@@ -79,6 +28,22 @@ body {
   font-size: 16px;
   padding: 0;
   margin: 0;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+body ::-webkit-scrollbar {
+  width: 5px;
+}
+body ::-webkit-scrollbar-track {
+  background: #cbd7ef;
+}
+body ::-webkit-scrollbar-thumb {
+  background: #37AF7C;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: #64cea1;
 }
 
 /* Defalut CSS Start */
@@ -262,6 +227,64 @@ ul {
 }
 
 /* Navbar CSS End */
+/* Sponsor Widget CSS Start */
+.sponsor-widget {
+  width: 320px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  z-index: 99;
+}
+.sponsor-widget__fixed {
+  position: fixed;
+  bottom: 5%;
+  left: 3%;
+  width: auto;
+}
+.sponsor-widget .sponsor-widget__title {
+  display: inline-block;
+  float: left;
+}
+.sponsor-widget .sponsor-widget__close {
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: -10зч;
+}
+.sponsor-widget .sponsor-widget__content {
+  display: flex;
+  flex-direction: row;
+}
+.sponsor-widget .sponsor-widget__content .sponsor-widget__details ul {
+  padding: 0;
+  margin: 10px 0 0 10px;
+}
+.sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li i, .sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li p {
+  display: inline-block;
+  margin: 0;
+  font-size: 14px;
+}
+.sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li i {
+  font-size: 12px;
+  margin-right: 3px;
+}
+.sponsor-widget .sponsor-widget__content .sponsor-widget__image {
+  width: 55px;
+}
+.sponsor-widget .sponsor-widget__content .sponsor-widget__image img {
+  border-radius: 50px;
+}
+
+/* Sponsor Widget CSS End */
 /* Banner Section CSS Start */
 .banner-bg-one {
   background-image: url(../img/app-landing/banner-bg.png);
@@ -553,6 +576,36 @@ ul {
 }
 
 /* Why Choose Section CSS End */
+/* Registers Section CSS Start */
+.registers-section {
+  background: #ecf2ff;
+}
+.registers-section .section-title {
+  margin: 0 0 60px;
+  text-align: left;
+}
+.registers-section .section-title p {
+  margin: 0;
+}
+.registers-section .registers-list {
+  height: 280px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.registers-section .registers-list ul {
+  margin-right: 10px;
+}
+.registers-section .registers-item {
+  padding: 10px 20px;
+  background: #ffffff;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+.registers-section .registers-item span {
+  margin: 0 5px;
+}
+
+/* Registers Section CSS End */
 /* Software CSS Start */
 .software-section {
   background: linear-gradient(to right bottom, #191a2f, #191a2f, #203458);
@@ -576,9 +629,10 @@ ul {
 }
 .software-section .iframe-container {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
+  width: 80%;
+  padding-bottom: 50%;
   height: 0;
+  margin: 50px auto 0;
 }
 .software-section .iframe-container iframe {
   position: absolute;
@@ -923,7 +977,7 @@ ul {
   box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
   border-radius: 20px;
   position: relative;
-  padding: 45px 30px;
+  padding: 45px 20px;
   margin-bottom: 30px;
   background: #ffffff;
 }
@@ -945,6 +999,9 @@ ul {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 0;
+}
+.how-use .how-card-one h3 {
+  font-size: 20px;
 }
 .how-use .how-card-one span {
   color: #99d6b0;
