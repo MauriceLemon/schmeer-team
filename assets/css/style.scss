@@ -437,10 +437,10 @@ ul {
         }
 
         .banner-btn {
-            margin-top: -50px;
+            margin-top: -40px;
             z-index: 1;
 
-            a {
+            button {
                 color: $white-color;
                 background-color: $green-color;
                 font-weight: 600;
@@ -1943,7 +1943,7 @@ ul {
 
 /* Preloader CSS Start */
 .loader-content {
-    background:#06a1e9;
+    background: linear-gradient(to right bottom, #293644, #191a2f);
     height: 100%;
     width: 100%;
     position: fixed;

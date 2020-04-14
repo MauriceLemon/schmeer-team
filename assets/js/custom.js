@@ -1,6 +1,11 @@
 (function($) {
 	'use strict';
 	jQuery(document).on('ready', function(){
+		//Sponsor widget
+		$(".js-widget-close").on("click", function (event) {
+			event.preventDefault();
+			$(".sponsor-widget__fixed").hide();
+		});
 
 		//Navbar JS
 		$(window).on('scroll',function() {

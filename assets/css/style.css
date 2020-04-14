@@ -363,10 +363,10 @@ ul {
   margin-bottom: 30px;
 }
 .main-banner .banner-text .banner-btn {
-  margin-top: -50px;
+  margin-top: -40px;
   z-index: 1;
 }
-.main-banner .banner-text .banner-btn a {
+.main-banner .banner-text .banner-btn button {
   color: #ffffff;
   background-color: #37AF7C;
   font-weight: 600;
@@ -380,21 +380,21 @@ ul {
   transition: all 200ms;
   position: relative;
 }
-.main-banner .banner-text .banner-btn a:hover {
+.main-banner .banner-text .banner-btn button:hover {
   background-color: #2b8861;
   color: #ffffff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
-.main-banner .banner-text .banner-btn a:hover::after {
+.main-banner .banner-text .banner-btn button:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
-.main-banner .banner-text .banner-btn a:active, .main-banner .banner-text .banner-btn a:focus {
+.main-banner .banner-text .banner-btn button:active, .main-banner .banner-text .banner-btn button:focus {
   outline: none;
   transform: translateY(3px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
-.main-banner .banner-text .banner-btn a:not(.banner-video)::after {
+.main-banner .banner-text .banner-btn button:not(.banner-video)::after {
   content: "";
   background-color: #37AF7C;
   display: inline-block;
@@ -1589,7 +1589,7 @@ ul {
 /* Back To Top  CSS End */
 /* Preloader CSS Start */
 .loader-content {
-  background: #06a1e9;
+  background: linear-gradient(to right bottom, #293644, #191a2f);
   height: 100%;
   width: 100%;
   position: fixed;

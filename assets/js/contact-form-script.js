@@ -3,10 +3,6 @@
 /*==============================================================*/
 (function ($) {
     "use strict"; // Start of use strict
-    $(".js-widget-close").on("click", function (event) {
-        event.preventDefault();
-        $(".sponsor-widget__fixed").hide();
-    });
 
     $("#contactForm").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
