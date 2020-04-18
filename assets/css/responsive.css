@@ -49,16 +49,19 @@
   .navbar .navbar-brand img {
     max-width: 100px;
   }
+  .navbar #navbar-btn--mobile a {
+    font-size: 14px;
+    padding: 5px 30px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    color: #fff;
+    background-color: #37AF7C;
+    border: none;
+  }
   .navbar button.navbar-toggler {
     border: 1px solid #fff;
     background: #fff;
     font-size: 15px;
-  }
-  .navbar .navbar-btn a {
-    font-size: 14px;
-    padding: 5px 15px;
-    margin-bottom: 15px;
-    margin-left: 0;
   }
 
   /* Home CSS */
@@ -272,6 +275,16 @@
   }
   .pricing-section .price-card p {
     font-size: 17px;
+  }
+  .pricing-section .price-card:hover {
+    background-color: #37AF7C;
+  }
+  .pricing-section .price-card:hover .price-btn a {
+    background-color: #ffffff;
+    color: #37AF7C;
+  }
+  .pricing-section .price-card:hover .price-btn a::after {
+    background-color: #fff;
   }
   .pricing-section .price-card .price-feature ul {
     padding-left: 0;

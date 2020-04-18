@@ -58,17 +58,22 @@
             }
         }
 
+        #navbar-btn--mobile {
+            a {
+                font-size: 14px;
+                padding: 5px 30px;
+                margin-bottom: 15px;
+                margin-left: 0;
+                color: #fff;
+                background-color: #37AF7C;
+                border: none;
+            }
+        }
+
         button.navbar-toggler {
             border: 1px solid #fff;
             background: #fff;
             font-size: 15px;
-        }
-
-        .navbar-btn a {
-            font-size: 14px;
-            padding: 5px 15px;
-            margin-bottom: 15px;
-            margin-left: 0;
         }
     }
 
@@ -344,6 +349,18 @@
 
             p {
                 font-size: 17px;
+            }
+
+            &:hover {
+                .price-btn a {
+                    background-color: #ffffff;
+                    color: #37AF7C;
+
+                    &::after {
+                        background-color: #fff;
+                    }
+                }
+                background-color: #37AF7C;
             }
 
             .price-feature {
