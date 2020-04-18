@@ -204,6 +204,7 @@ ul {
     }
 
     .navbar-btn {
+        display: none;
         font-size: 16px;
         background-color: $white-color;
         color: $violet-color-dark;
@@ -260,6 +261,7 @@ ul {
     animation: .5s ease-in-out fadeInDown;
 
     .navbar-btn {
+        display: inline-block;
         background-color: $green-color;
         color: $white-color;
         border: none;
@@ -294,7 +296,7 @@ ul {
     padding: 20px;
     box-shadow: $shadow-small;
     border-radius: 20px;
-    z-index: 99;
+    z-index: 999;
 
     .sponsor-widget__title {
         display: inline-block;
@@ -1862,12 +1864,12 @@ ul {
                     transition: .5s;
 
                     &:hover {
-                        color: #513fcb;
+                        color: $green-color;
                         margin-left: 2px;
                     }
 
                     &:hover i {
-                        color: #513fcb;
+                        color: $green-color;
                     }
 
                     i {

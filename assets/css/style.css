@@ -167,6 +167,7 @@ ul {
   width: 100%;
 }
 .navbar .navbar-btn {
+  display: none;
   font-size: 16px;
   background-color: #ffffff;
   color: #191a2f;
@@ -217,6 +218,7 @@ ul {
   animation: 0.5s ease-in-out fadeInDown;
 }
 .is-sticky .navbar-btn {
+  display: inline-block;
   background-color: #37AF7C;
   color: #ffffff;
   border: none;
@@ -238,7 +240,7 @@ ul {
   padding: 20px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  z-index: 99;
+  z-index: 999;
 }
 .sponsor-widget__fixed {
   position: fixed;
@@ -1525,11 +1527,11 @@ ul {
   transition: 0.5s;
 }
 .footer-area .footer-widget ul li a:hover {
-  color: #513fcb;
+  color: #37AF7C;
   margin-left: 2px;
 }
 .footer-area .footer-widget ul li a:hover i {
-  color: #513fcb;
+  color: #37AF7C;
 }
 .footer-area .footer-widget ul li a i {
   font-size: 14px;

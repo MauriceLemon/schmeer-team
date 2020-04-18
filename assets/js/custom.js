@@ -29,7 +29,15 @@
 			if( $(e.target).is('a') && $(e.target).attr('class')!= 'dropdown-toggle' ){
 				$(this).collapse('hide');
 			}
-		});	
+		});
+
+		$('.price-btn a').on('click', function(e){
+			var anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $(anchor.attr('href')).offset().top - 70
+			}, 1500);
+			e.preventDefault();
+		});
 	
 		//Screenshot JS
 		$('.screenshot-slider').owlCarousel({
