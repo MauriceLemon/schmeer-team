@@ -100,17 +100,23 @@
                 margin-bottom: 20px;
             }
 
-            .form__group {
-                display: block;
-                margin: 0 auto;
-                width: 95%;
-
-                label {
-                    display: none;
+            .form {
+                .error {
+                    transform: translateY(-10px);
                 }
 
-                &:not(:last-child) {
-                    margin-bottom: 16px;
+                &__group {
+                    display: block;
+                    margin: 0 auto;
+                    width: 95%;
+
+                    label {
+                        display: none;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 16px;
+                    }
                 }
             }
 
@@ -147,6 +153,23 @@
         }
     }
 
+    .form {
+        .name {
+            &-input {
+                width: 90% !important;
+            }
+        }
+
+        .pass {
+            &.mail-input {
+                width: 90% !important;
+            }
+        }
+
+        .btn {
+            width: 90% !important;
+        }
+    }
 
     /* Why Choose CSS */
     .why-choose {
@@ -236,16 +259,20 @@
         }
     }
 
-    .sponsor-widget {
+    .sponsor-widget:not(.sponsor-widget__fixed) {
         margin: 20px auto;
         width: auto;
     }
 
     .registers-section {
         .registers-list {
-            margin-bottom: 40px;
-            ul {
-                padding: 0;
+            overflow-y: scroll;
+            width: 80% !important;
+            margin: 40px auto;
+
+            .last-register {
+                max-width: 100%;
+                min-width: 100%;
             }
         }
     }
@@ -361,7 +388,6 @@
                         background-color: #fff;
                     }
                 }
-                background-color: #37AF7C;
             }
 
             .price-feature {
@@ -413,7 +439,10 @@
 
             .testimonial-item {
                 padding: 45px 20px 45px;
-                text-align: center;
+
+                .client-info {
+                    text-align: center;
+                }
 
                 img {
                     margin:0 auto 10px;
@@ -421,7 +450,7 @@
 
                 p {
                     margin:auto;
-                    max-width: 235px;
+                    max-width: 80%;
                 }
             }
         }
@@ -553,7 +582,7 @@
                 }
             }
 
-            p {
+            p, a {
                 margin-bottom: 15px;
             }
 
@@ -597,7 +626,7 @@
 
     .section-title {
         text-align: center !important;
-        margin: 0 auto 50px;
+        margin: 0 auto 50px !important;
 
         span {
             font-size: 15px;
@@ -660,17 +689,23 @@
                 margin: 0 auto 5px;
             }
 
-            .form__group {
-                display: block;
-                margin: 0 auto;
-                width: 70%;
-
-                label {
-                    display: none;
+            .form {
+                .error {
+                    transform: translateY(-10px);
                 }
 
-                &:not(:last-child) {
-                    margin-bottom: 16px;
+                &__group {
+                    display: block;
+                    margin: 0 auto;
+                    width: 70%;
+
+                    label {
+                        display: none;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 16px;
+                    }
                 }
             }
 
@@ -742,6 +777,24 @@
         }
     }
 
+    .sponsor-widget:not(.sponsor-widget__fixed) {
+        margin: 20px auto;
+        width: auto;
+    }
+
+    .registers-section {
+        .registers-list {
+            overflow-y: scroll;
+            width: 80% !important;
+            margin: 40px auto;
+
+            .last-register {
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+
     /* Screenshot CSS */
     .screenshots-section {
         padding-bottom: 60px;
@@ -789,8 +842,13 @@
 
     /* Testimonial CSS */
     .testimonial-section {
-        padding-bottom: 0;
+        padding-bottom: 50px;
 
+        .section-title {
+            h2 {
+                font-size: 20px;
+            }
+        }
         .testimonial-shape {
             display: none;
         }
@@ -798,18 +856,90 @@
         .testimonial-slider {
 
             &::before {
-                font-size: 70px;
+                font-size:30px;
                 top: 80px;
                 right:20px;
+            }
+
+            .testimonial-item {
+                padding: 45px 20px 45px;
+
+                .client-info {
+                    text-align: center;
+                }
+
+                img {
+                    margin:0 auto 10px;
+                }
+
+                p {
+                    margin:auto;
+                    max-width: 80%;
+                }
             }
         }
 
         .testimonial-img {
             .client-img {
-                :nth-child(2) {
-                    bottom: 40px;
-                    left: 28%;
+
+                img {
+                    animation: none;
                 }
+                :nth-child(1) {
+                    top: 15%;
+                    left: 15%;
+                    max-width: 30px;
+                }
+
+                :nth-child(2) {
+                    bottom: 10%;
+                    left: 27%;
+                    max-width: 30px;
+                }
+
+                :nth-child(3) {
+                    top: 10%;
+                    left: 30%;
+                }
+
+                :nth-child(4) {
+                    left: 0;
+                    top: 25%;
+                    max-width: 50px;
+                    right: 0;
+                    margin: auto;
+                }
+
+                :nth-child(5) {
+                    right: 20%;
+                    top: 10%;
+                    width: 40px;
+                }
+
+                :nth-child(6) {
+                    right: 10%;
+                    bottom: 10%
+                }
+            }
+        }
+
+        .testimonial-slider {
+            .testimonial-item {
+                padding: 45px 0px 45px 0;
+            }
+
+            .owl-prev, .owl-next {
+                width: 40px;
+                height: 40px;
+                font-size: 12px !important;
+                left:-70px;
+                right:0;
+                margin: auto;
+            }
+
+            .owl-next {
+                left:0;
+                right:-35px;
             }
         }
     }
@@ -944,28 +1074,106 @@
     }
 
     /* Testimonial Section */
+    /* Testimonial CSS */
     .testimonial-section {
+        padding-bottom: 50px;
+
+        .section-title {
+            h2 {
+                font-size: 20px;
+            }
+        }
+        .testimonial-shape {
+            display: none;
+        }
+
+        .testimonial-slider {
+
+            &::before {
+                font-size:30px;
+                top: 80px;
+                right:20px;
+            }
+
+            .testimonial-item {
+                padding: 45px 20px 45px;
+
+                .client-info {
+                    text-align: center;
+                }
+
+                img {
+                    margin:0 auto 10px;
+                }
+
+                p {
+                    margin:auto;
+                    max-width: 80%;
+                }
+            }
+        }
+
         .testimonial-img {
             .client-img {
 
+                img {
+                    animation: none;
+                }
                 :nth-child(1) {
-                    top: 50px;
-                    left: 80px;
-                    max-width: 60px;
+                    top: 15%;
+                    left: 15%;
+                    max-width: 30px;
                 }
 
                 :nth-child(2) {
-                    bottom: 30px;
-                    left: 28%;
+                    bottom: 10%;
+                    left: 27%;
+                    max-width: 30px;
+                }
+
+                :nth-child(3) {
+                    top: 10%;
+                    left: 30%;
                 }
 
                 :nth-child(4) {
                     left: 0;
+                    top: 25%;
+                    max-width: 50px;
                     right: 0;
-                    max-width: 60px;
                     margin: auto;
-                    top: 80px;
                 }
+
+                :nth-child(5) {
+                    right: 20%;
+                    top: 10%;
+                    width: 40px;
+                }
+
+                :nth-child(6) {
+                    right: 10%;
+                    bottom: 10%
+                }
+            }
+        }
+
+        .testimonial-slider {
+            .testimonial-item {
+                padding: 45px 0px 45px 0;
+            }
+
+            .owl-prev, .owl-next {
+                width: 40px;
+                height: 40px;
+                font-size: 12px !important;
+                left:-70px;
+                right:0;
+                margin: auto;
+            }
+
+            .owl-next {
+                left:0;
+                right:-35px;
             }
         }
     }

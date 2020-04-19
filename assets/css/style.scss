@@ -370,9 +370,9 @@ ul {
         }
     }
 
-
     .error {
         color: $white-color;
+        transform: translateY(-45px);
     }
 
     .name {

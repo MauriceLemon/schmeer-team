@@ -306,6 +306,7 @@ ul {
 }
 .form .error {
   color: #ffffff;
+  transform: translateY(-45px);
 }
 .form .name-input {
   border-radius: 50px;
