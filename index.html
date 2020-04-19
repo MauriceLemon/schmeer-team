@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,17 +101,17 @@
             </div>
             <div class="sponsor-widget__content">
                 <div class="sponsor-widget__image">
-                    <img src="assets/img/app-landing/testimonial/1.png" alt="Sponsor Photo">
+                    {$photosponsor}
                 </div>
                 <div class="sponsor-widget__details">
                     <ul>
                         <li>
                             <i class="fas fa-user"></i>
-                            <p>Петр Иванов</p>
+                            <p>{$fiosponsor}</p>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <p>petr.ivanov@mail.ru</p>
+                            <p>{$emailsponsor}</p>
                         </li>
                     </ul>
                 </div>
@@ -134,23 +134,166 @@
                                         и <a href="https://itunes.apple.com/us/app/crowd1-network/id1441521229?ls=1&mt=8" target="_blank">iOS</a>, а также на официальном
                                         <a href="https://crowd1.com/" target="_blank">веб-сайте</a>.
                                     </p>
-                                    <form action="#" class="form">
+                                    <!-- ATTENTION next part of code is full of hacks due to integration to recruting.biz platform -->
+                                    <form enableclientvalidation class="form subscribeform" id="yw0" action="/ru/register/ajaxregister/partnerRegisterValidate" method="post">
+                                        <div style="display:none"><input type="hidden" value="f58f14be5a545c98f39a43594bd76300c29cac0d" name="YII_CSRF_TOKEN"></div>
                                         <div class="form__group">
-                                            <input type="text" class="form__input" placeholder="Введите имя" id="name" required>
-                                            <label for="name" class="form__label">Введите имя</label>
+                                            <input class="form__input" size="56" maxlength="56" placeholder="Введите имя" required="required" name="UsersTemp[username]" id="UsersTemp_username" type="text">
+                                            <label for="UsersTemp_username" class="form__label">Ваше имя</label>
                                         </div>
                                         <div class="form__group">
-                                            <input type="email" class="form__input" placeholder="Введите email" id="email" required>
-                                            <label for="email" class="form__label">Введите email</label>
+                                            <input class="form__input" size="50" maxlength="50" placeholder="Введите email" required="required" name="UsersTemp[email]" id="UsersTemp_email" type="text">
+                                            <label for="UsersTemp_email" class="form__label">Ваш email</label>
                                         </div>
+                                        <label for="UsersTemp_username" class="error name-input-error" style="transform: translateY(-45px);"></label>
+                                        <label for="UsersTemp_email" class="error email-input-error" style="transform: translateY(-45px);"></label>
+                                        <input type="hidden" value="2" name="UsersTemp[sponsor_id]" id="UsersTemp_sponsor_id">
                                         <div class="banner-btn">
-                                            <button>Хочу в команду</button>
-                                            <a href="https://www.youtube.com/watch?v=zIQKfoyIvOg" class="banner-video popup-vimeo">
+                                            <button class="btn" type="button" onclick="submitForTemplateForm(this);">Хочу в команду</button>
+                                            <a href="https://vimeo.com/406505343" class="banner-video popup-vimeo">
                                                 <i class="flaticon-play-button"></i>
-                                                Видеопрезентация
+                                                Почему сетевой маркетинг?
                                             </a>
                                         </div>
+                                        <div style="display: none;" class="toolTip form1">
+                                            <div class="errorMessage" id="UsersTemp_username_em_" style="display:none"></div>
+                                            <div class="errorMessage" id="UsersTemp_email_em_" style="display:none"></div>
+                                        </div>
+
+                                        <script type="text/javascript">
+                                            function getCookie(name) {
+                                                var matches = document.cookie.match(new RegExp(
+                                                    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                                                ));
+                                                return matches ? decodeURIComponent(matches[1]) : undefined;
+                                            }
+                                            (function cookeIdForm(){
+                                                var nowCooke = getCookie('cookeIdForm');
+                                                var date = new Date(new Date().getTime() + 60 * 3000);
+                                                var formEl = document.getElementById('yw0');
+                                                if(nowCooke === undefined){
+                                                    document.cookie='cookeIdForm=1; path=/; expires=' + date.toUTCString();
+                                                    nowCooke = 0;
+                                                }else{
+                                                    nowCooke = Number(nowCooke);
+                                                    document.cookie = 'cookeIdForm=' + (nowCooke + 1) + '; path=/; expires=' + date.toUTCString();
+                                                }
+                                                formEl.id = 'yw' + String(nowCooke);
+                                            })();
+                                            document.addEventListener('DOMContentLoaded', function(){
+                                                var delCooke = getCookie('cookeIdForm');
+                                                var dateNull = new Date(0);
+                                                if(delCooke !== undefined)
+                                                    document.cookie = 'cookeIdForm=; path=/; expires=' + dateNull.toUTCString();
+                                            });
+
+                                            function createCookie(name, value, days) {
+                                                var expires;
+
+                                                if (days) {
+                                                    var date = new Date();
+                                                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                                                    expires = "; expires=" + date.toGMTString();
+                                                } else {
+                                                    expires = "";
+                                                }
+                                                document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+                                            }
+
+                                        </script>
+                                        <script>
+                                            function submitForTemplateForm(el) {
+                                                var elForm = el;
+                                                var nameEl = undefined;
+                                                var emailEl = undefined;
+                                                var phoneEl = undefined;
+                                                while(elForm != undefined && elForm.nodeName.toUpperCase() != 'FORM'){
+                                                    elForm = elForm.parentNode;
+                                                    if(elForm.nodeName.toUpperCase() == 'BODY') elForm = undefined;
+                                                }
+                                                if (elForm != undefined)
+                                                    if(elForm.getElementsByTagName('input').length > 0)
+                                                        for(var i = 0; i < elForm.getElementsByTagName('input').length; i++)
+                                                            if(elForm.getElementsByTagName('input')[i].hasAttribute('name')){
+                                                                if(elForm.getElementsByTagName('input')[i].getAttribute('name') == "UsersTemp[username]")
+                                                                    nameEl = elForm.getElementsByTagName('input')[i].value;
+                                                                if(elForm.getElementsByTagName('input')[i].getAttribute('name') == "UsersTemp[email]")
+                                                                    emailEl = elForm.getElementsByTagName('input')[i].value;
+                                                                if(elForm.getElementsByTagName('input')[i].getAttribute('name') == "UsersTemp[phone]")
+                                                                    phoneEl = elForm.getElementsByTagName('input')[i].value;
+                                                            }
+                                                if(nameEl != undefined && emailEl != undefined){
+                                                    if(elForm.getElementsByClassName('name-input-error').length > 0)elForm.getElementsByClassName('name-input-error')[0].innerHTML = '';
+                                                    if(elForm.getElementsByClassName('email-input-error').length > 0)elForm.getElementsByClassName('email-input-error')[0].innerHTML = '';
+
+                                                    var partnerMailerSettings = '';
+                                                    var str = "/partnertwo/admin";
+                                                    var sub = str.substr((Number(str.indexOf('partner')) + 7), (Number(str.indexOf('/',(Number(str.indexOf('partner')) + 7))) - (Number(str.indexOf('partner')) + 7)));
+
+                                                    if(sub.length === 0)
+                                                    {
+                                                        partnerMailerSettings = 'first';
+                                                    }
+                                                    else
+                                                    {
+                                                        partnerMailerSettings = sub;
+                                                    }
+
+                                                    $.ajax({
+                                                        url: '/register/ajaxregister/partnerRegisterValidate',
+                                                        type: 'POST',
+                                                        dataType: 'JSON',
+                                                        data: {
+                                                            'ajax' : true,
+                                                            'UsersTemp': {
+                                                                'email' : emailEl,
+                                                                'username' : nameEl,
+                                                                'phone' : phoneEl,
+                                                                'partnerMailerSettings' : partnerMailerSettings,
+                                                            },
+
+                                                            'YII_CSRF_TOKEN'  : "f58f14be5a545c98f39a43594bd76300c29cac0d"
+                                                        },
+                                                        success: function(data)
+                                                        {
+
+                                                            if($.type( data ) === "object")
+                                                            {
+
+                                                                $.each(data, function(name, errors) {
+                                                                    $.each(errors, function(key, error) {
+                                                                        if(name == "UsersTemp_username")
+                                                                            if(elForm.getElementsByClassName('name-input-error'))
+                                                                                elForm.getElementsByClassName('name-input-error')[0].innerHTML = '<div>' + error + '</div>';
+                                                                        if(name == "UsersTemp_email")
+                                                                            if(elForm.getElementsByClassName('email-input-error'))
+                                                                                elForm.getElementsByClassName('email-input-error')[0].innerHTML = '<div>' + error + '</div>';
+                                                                    });
+
+                                                                });
+                                                                return false;
+
+                                                            }
+                                                            else
+                                                            {
+                                                                createCookie("landing_redirect", partnerMailerSettings , '1');
+                                                                document.location.href = "/site/login#registration";
+                                                            }
+
+
+                                                        },
+                                                        error: function(xhr)
+                                                        {
+                                                            alert('Ошибка запроса')
+                                                        }
+                                                    });
+                                                } else {
+                                                    alert("При отправке запроса произошла ошибка");
+                                                }
+                                            }
+                                        </script>
                                     </form>
+                                    <!-- End of DANGER zone -->
                                 </div>
                             </div>
     
@@ -238,57 +381,53 @@
                                     присоединяются новые участники и становятся ее частью.
                                     Вступайте и Вы в нашу команду!
                                 </p>
-                                <div class="sponsor-widget">
-                                    <div class="sponsor-widget__header">
-                                        <h6 class="sponsor-widget__title">Приглашение от:</h6>
-                                    </div>
-                                    <div class="sponsor-widget__content">
-                                        <div class="sponsor-widget__image">
-                                            <img src="assets/img/app-landing/testimonial/1.png" alt="Sponsor Photo">
-                                        </div>
-                                        <div class="sponsor-widget__details">
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-user"></i>
-                                                    <p>Петр Иванов</p>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-envelope"></i>
-                                                    <p>petr.ivanov@mail.ru</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <div class="registers-list wow fadeInUp" data-wow-duration="1s">
-                            <ul>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 14:35 <span> | </span> Мария Петрова
-                                </li>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 13:01 <span> | </span> Алексей Коновалов
-                                </li>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 12:08 <span> | </span> Петр Верзилов
-                                </li>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 11:24 <span> | </span> Александр Цареградский
-                                </li>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 10:57 <span> | </span> Ульяна Борисова
-                                </li>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 10:22 <span> | </span> Кадыр Рамзанов
-                                </li>
-                                <li class="registers-item">
-                                    13 апреля <span> | </span> 09:30 <span> | </span> Владимир Владимирович
-                                </li>
-                            </ul>
+                        <div class="sponsor-widget">
+                            <div class="sponsor-widget__header">
+                                <h6 class="sponsor-widget__title">Приглашение от:</h6>
+                            </div>
+                            <div class="sponsor-widget__content">
+                                <div class="sponsor-widget__image">
+                                    {$photosponsor}
+                                </div>
+                                <div class="sponsor-widget__details">
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-user"></i>
+                                            <p class="data">{$fiosponsor}</p>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-envelope"></i>
+                                            <p class="data">{$emailsponsor}</p>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-phone"></i>
+                                            <p class="data">{$phonesponsor}</p>
+                                        </li>
+                                        <li>
+                                            <i class="fab fa-skype"></i>
+                                            <p class="data">{$skypesponsor}</p>
+                                        </li>
+                                        <li>
+                                            <i class="fab fa-vk"></i>
+                                            <a href="#" target="_blank" class="data-vkontakte">VKontakte</a>
+                                            {$linkvk}
+                                        </li>
+                                        <li>
+                                            <i class="fab fa-facebook"></i>
+                                            <a href="#" target="_blank" class="data-facebook">Facebook</a>
+                                            {$linkfacebook}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="registers-list wow fadeInUp" data-wow-duration="1s">
+                        {$lastregisters}
                     </div>
                 </div>
             </div>
@@ -328,8 +467,8 @@
                     </div>
                 </div>
                 <div class="row iframe-container">
-                    <a href="https://www.youtube.com/watch?v=zIQKfoyIvOg" class="banner-video popup-vimeo">
-                        <img src="assets/img/app-landing/placeholder.png" class="video-thumbnail">
+                    <a href="https://vimeo.com/406507092" class="banner-video popup-vimeo">
+                        <img src="assets/img/app-landing/placeholder2.png" class="video-thumbnail">
                     </a>
                 </div>
             </div>
@@ -490,7 +629,7 @@
                     <div class="tab-pane fade show active" id="month" role="tabpanel" aria-labelledby="month-tab">
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
-                                <div class="price-card">
+                                <div class="price-card price-card--1">
                                     <div class="price-card__image">
                                         <img src="assets/img/app-landing/packages/package-white.png" alt="Package White Badge">
                                     </div>
@@ -525,7 +664,7 @@
                             </div>
 
                             <div class="col-lg-3 col-md-6">
-                                <div class="price-card business-class">
+                                <div class="price-card price-card--2 business-class">
                                     <div class="price-card__image">
                                         <img src="assets/img/app-landing/packages/package-black.png" alt="Package White Badge">
                                     </div>
@@ -560,7 +699,7 @@
                             </div>
 
                             <div class="col-lg-3 col-md-6">
-                                <div class="price-card business-class ">
+                                <div class="price-card price-card--3 business-class ">
                                     <div class="price-card__image">
                                         <img src="assets/img/app-landing/packages/package-gold.png" alt="Package White Badge">
                                     </div>
@@ -595,7 +734,7 @@
                             </div>
 
                             <div class="col-lg-3 col-md-6">
-                                <div class="price-card premium">
+                                <div class="price-card price-card--4 premium">
                                     <div class="price-card__image">
                                         <img src="assets/img/app-landing/packages/package-titanium.png" alt="Package White Badge">
                                     </div>
@@ -663,33 +802,181 @@
                     <div class="col-lg-5">
                         <div class="testimonial-slider owl-carousel owl-theme">
                             <div class="testimonial-item">
-                                <img src="assets/img/app-landing/testimonial/client-img.png" alt="client image">
+                                <img src="assets/img/app-landing/testimonial/other/1.jpg" alt="client image">
 
                                 <div class="client-info">
-                                    <h3>Ирина Панкратова</h3>
+                                    <h3>Duban Svetlana</h3>
                                     <span>Предприниматель</span>
                                 </div>
-                                <p>Я узнала об этой платформе не так давно. Сначала я вообще не понимала как это работает и каким образом может принести деньги. Но благодаря Виталию и вебинарам, которые он регулярно ведёт, я быстро вошла в курс дела и уже даже имею прибыль!</p>
+                                <p>
+                                    Меня зовут Светлана Дубан. В компании только 3 недели, а после меня уже 577 000 зашло в Компанию! Это для меня рекордные цифры! Компания идет огромными шагами к своей цели. Почему бы и нам именно в ней не осуществить свои мечты о финансовом благополучии? Присоединяйтесь. Не теряйте время. На своем примере увидите, как быстро идут регистрации под вами.
+                                </p>
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="assets/img/app-landing/testimonial/client-img-three.png" alt="client image">
+                                <img src="assets/img/app-landing/testimonial/other/2.jpg" alt="client image">
 
                                 <div class="client-info">
-                                    <h3>Виктор Варлаков</h3>
+                                    <h3>Nemcinov Irina</h3>
                                     <span>Торговый агент</span>
                                 </div>
-                                <p>Я давно задумывался о способах наладить пассивный доход, но всё никак не мог определиться с нишей. И очень во время я узнал об этой платформе. Доход есть! Теперь собираюсь привлечь в свою команду больше людей.</p>
+                                <p>
+                                    Привет всем! В компании 4ю неделю. После меня зашло уже 649 535 человек! Масштабы впечатляющие! Присоединяйтесь к нам, друзья! Хвала и честь нашим Гуру, на этой площадке они приготовили для нас все необходимые инструменты,  которые в разы облегчат вашу  "добычу"  денег, славы, успеха, признания и пр. и пр...,  обучающие материалы, а также уйма полезной информации и все свежие новости по теме, которые будут постоянно обновляться по мере поступления. Так, что вы всегда будете в курсе событий. А события назревают грандиозные! Не теряйте время на раздумья- время, увы, невосполнимый ресурс. Торопитесь к своему успеху! WELCOME!
+                                </p>
                             </div>
 
                             <div class="testimonial-item">
-                                <img src="assets/img/app-landing/testimonial/client-img-two.png" alt="client image">
+                                <img src="assets/img/app-landing/testimonial/other/3.jpg" alt="client image">
 
                                 <div class="client-info">
-                                    <h3>Елена Фёдорова</h3>
-                                    <span>Косметолог</span>
+                                    <h3>Ионку Аурел</h3>
+                                    <span>Перевозчик</span>
                                 </div>
-                                <p>Всегда была далека от финансов и дел с ними. Даже не думала, что у меня есть шанс что-то понять. Но я разобралась!!! Спасибо, Виталий!!!</p>
+                                <p>
+                                    Здравствуйте Господа, меня зовут Аурел,я с Молдавии,я обычный человек,попав в компании
+                                    CROVD1.у меня поевилсь возможность разбогатеть,то что желаю и вам Друзья,это просто феноменально.добро
+                                    пажалывать в мир технологии.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/4.jpeg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Vasyuta Igor</h3>
+                                    <span>Предприниматель</span>
+                                </div>
+                                <p>
+                                    Меня  зовут Васюта Игорь. Только зарегестрировался на платформе. В компании Crowd1 два дня.
+                                    Пришёл в компанию с рынка криптовалют. Вижу большой потенциал развития у компании. Иновационный
+                                    подход и в построении бизнеса и в маркетинге. Отдельно хочу отметить важность наличия платформы,
+                                    разработанной Виталием, по продвижению компании. Пошаговая система презентаций ведёт к осознанному принятию решения. Всем успеха.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/5.jpeg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Staputis Darius</h3>
+                                    <span>Artist</span>
+                                </div>
+                                <p>
+                                    In regards to nowadays situations I been looking forward to some business online or anything to make money.
+                                    Good friend of mine offered this opportunity and I joined the same day. Why? To me it look  exactly today's business, equipped with technology and simple idea.
+                                    Already got experience in MLM and this project to me looks good!
+
+                                    Thanks for opportunity Laurynas!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/6.jpg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Стеблина Андрей</h3>
+                                    <span>Менеджер</span>
+                                </div>
+                                <p>
+                                    Меня зовут Андрей Стеблина. Только что зарегестрировался на платформе. Понятная и
+                                    доступная платформа не перезагруженная лишней информацией. Вся информация по проэкту
+                                    подана в понятной форме что не составить новичку разобратся и зарабатывать. Спасибо разроботчикам!!!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/7.jpg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Nina Halt</h3>
+                                    <span>Торговый агент</span>
+                                </div>
+                                <p>
+                                    Меня зовут Нина.В компании уже чуть больше месяца.За это время моя жизнь круто
+                                    изменилась и это все благодаря компании Crowd 1. Я поняла, что раньше я жила неправильно,
+                                    было все однообразно..Работа..Дом..Работа. А сейчас я горю, я летаю, у меня появился стимул в жизни.
+                                    Компания Crowd 1 ,дает нам реальную возможность изменить нашу жизнь в лучшую сторону,
+                                    получить финансовую независимость,и веру в то, что наше будущее и будущее наших детей будет обеспечено.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/8.jpg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Бекер Татьяна</h3>
+                                    <span>Владелец мелкого бизнеса</span>
+                                </div>
+                                <p>
+                                    Всем привет!! Меня зовут Татьяна, Я из Молдовы!!! В проекте Growd1 я с 20 марта 2020 года,Очень рада успехам ...уже заработала 197 евро после моей регистрации уже  375052 человека зарегистрировалось,это фантастика!!! Я попала в команду профессионалов ,партнеров с огромным опытом работы в интернет проектах,хочу обучаться продвижению своей сети  и быть полезной всем моим партнерам!!Желаю всем не думать долго,а действовать,принимать решения и развиваться ВМЕСТЕ с нами!!! Желаю всем успехов и огромных чеков!!!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/9.jpeg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Timofeeva Taissiya</h3>
+                                    <span>Домохозяйка</span>
+                                </div>
+                                <p>
+                                    Всем привет! Маня зовут Таисия.
+
+                                    В компании CROWD1 совсем недавно, но уже вижу большие перспективы!
+                                    CROWD1 - это самый надежный и легальный бизнес!
+                                    Здесь реально люди зараватывают большие деньги!
+                                    И я в этом убедилась, разобравшись в маркетинге, системе передвижения доходов компании.
+                                    Здесь все по честному!
+                                    Компания CROWD1 - продвигается в прямом смысле со скоростью света!
+                                    За короткий срок существования , в компании работает уже 2 750 000 людей по всему миру!!!  И это впечатляет!
+                                    Я счаствива быть здесь! И вместе с этим очень благодарна нашему админу Виталию Шмеер за его непосильный труд, за создание такого замечательного сайта! За то что он всегда на связи и готов помогать всем!
+                                    Многое зависит от того, кто с вами рядом, как ведут работу ваши спонсоры?
+                                    Именно в этой группе я чувствую себя занятой, палезной!
+                                    Вижу реальное продвижение в бизнесе! А значит и большие чеки!!!!!!!
+                                    Присоединяйтесь к самой успешной команде!
+                                    Мы вам рады!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/10.png" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Graf Rudolf</h3>
+                                    <span>Предприниматель</span>
+                                </div>
+                                <p>
+                                    Приветствую всех участников!
+
+                                    Меня зовут Рудольф. Нахожусь под впечатлением от грамотной структуры и маркетинга компании CROWD1.
+                                    Пошаговые инструкции и сопровождение наставников, понятные видео и контент - здесь можно разобраться в системе быстро и начать зарабатывать уже сейчас. В кабинете все устроено так, что видишь воронку приглашений и реальные результаты: люди регистрируются, обмениваются мнениями, изучают. В общем, берут жизнь в свои руки!
+                                    Даже в это непростое время можно и нужно находить способы заработка. А в компании CROWD1 это можно делать безопасно и легально, как я успел убедиться. Не приходится тратить много времени и усилий, а результат не заставляет себя ждать. Мое уважение создателям платформы и огромная благодарность наставникам.
+                                    Рад, что я с вами!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/11.jpg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Kutscher Константин</h3>
+                                    <span>Дизайнер</span>
+                                </div>
+                                <p>
+                                    Виталий огромное спасибо за проделанную тобой работу
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="assets/img/app-landing/testimonial/other/12.jpg" alt="client image">
+
+                                <div class="client-info">
+                                    <h3>Sawljuk Swetlana</h3>
+                                    <span>Терапевт</span>
+                                </div>
+                                <p>
+                                    Приветствую участников данного сообщества! Я - Савлюк Светлана, с 4 марта в проекте. Вдохновляюсь энтузиазмом Ирины, Виталия и Виктора. Проект перспективный и активно растущий. Регистрируйтесь! И к своей цели, или целям! Удачи нам всем и здоровья!
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -713,21 +1000,13 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="newsletter-text">
-                                <h3>Подпишитесь на нашу рассылку</h3>
+                                <h3>Зарегистрируйтесь сейчас</h3>
                                 <p>И Вы получите бесплатный доступ к вебинару, раскрывающему основы MLM-бизнеса</p>
                             </div>
                         </div>
         
                         <div class="col-lg-6">
-                            <form class="newsletter-form" data-toggle="validator">
-                                <input type="email" class="form-control" placeholder="Введите Ваш email" name="EMAIL" required autocomplete="off">
-        
-                                <button class="default-btn electronics-btn" type="submit">
-                                    Подписаться
-                                </button>
-        
-                                <div id="validator-newsletter" class="form-result"></div>
-                            </form>
+                            {$subscribeform}
                         </div>
                     </div>
 
@@ -797,25 +1076,33 @@
 
                     <div class="col-lg-4 col-sm-6">
                         <div class="footer-widget pl-90">
-                            <h3>Cоциальные сети</h3>
+                            <h3>Ваш спонсор:</h3>
                             <ul>
                                 <li>
-                                    <a href="https://www.facebook.com/Schmeer.Vital" target="_blank">
-                                        <i class="fab fa-facebook"></i>
-                                        Facebook
-                                    </a>
-                                </li>
-                                <li>                             
-                                    <a href="https://vk.com/schmeer4" target="_blank">
-                                        <i class="fab fa-vk"></i>
-                                        VK.com
-                                    </a>
+                                    <i class="fas fa-user"></i>
+                                    <p class="data">{$fiosponsor}</p>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/schmeervitaliy/" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                        Instagram
-                                    </a>
+                                    <i class="fas fa-envelope"></i>
+                                    <p class="data">{$emailsponsor}</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <p class="data">{$phonesponsor}</p>
+                                </li>
+                                <li>
+                                    <i class="fab fa-skype"></i>
+                                    <p class="data">{$skypesponsor}</p>
+                                </li>
+                                <li>
+                                    <i class="fab fa-vk"></i>
+                                    <a href="#" target="_blank" class="data-vkontakte-footer">VKontakte</a>
+                                    {$linkvk}
+                                </li>
+                                <li>
+                                    <i class="fab fa-facebook"></i>
+                                    <a href="#" target="_blank" class="data-facebook-footer">Facebook</a>
+                                    {$linkfacebook}
                                 </li>
                             </ul>
                         </div>
@@ -843,18 +1130,10 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <!-- Owl Carousel JS -->
         <script src="assets/js/owl.carousel.min.js"></script>
-        <!-- Form Ajaxchimp JS -->
-		<script src="assets/js/jquery.ajaxchimp.min.js"></script>
-		<!-- Form Validator JS -->
-        <script src="assets/js/form-validator.min.js"></script>
-        <!-- Contact JS -->
-		<script async src="assets/js/contact-form-script.js"></script>
         <!-- Slick Slider Popup JS -->
         <script src="assets/js/slick.min.js"></script>
         <!-- MixitUp JS -->
         <script src="assets/js/jquery.mixitup.min.js"></script>
-        <!-- Counter JS -->
-        <script src="assets/js/counter.min.js"></script>
         <!-- Waypoint JS -->
         <script src="assets/js/waypoint.min.js"></script>
         <!-- WOW JS -->
@@ -863,5 +1142,7 @@
         <script src="assets/js/jquery.magnific-popup.min.js"></script>
         <!-- Custom JS -->
         <script src="assets/js/custom.js"></script>
+
+
     </body>
 </html>

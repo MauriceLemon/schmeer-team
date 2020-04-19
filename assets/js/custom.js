@@ -1,6 +1,31 @@
 (function($) {
 	'use strict';
 	jQuery(document).on('ready', function(){
+		//Dynamic social links management
+		$('p.data:empty').parent().hide();
+
+		var $facebookLink = $('.fa.fa-facebook');
+		if ($facebookLink.length) {
+			var href = $facebookLink.first().parent().attr('href');
+			$('.data-facebook').attr('href', href);
+			$('.data-facebook-footer').attr('href', href);
+			$facebookLink.hide();
+		} else {
+			$('.data-facebook').parent().hide();
+			$('.data-facebook-footer').parent().hide();
+		}
+
+		var $vkLink = $('.fa.fa-vk');
+		if ($vkLink.length) {
+			var href = $vkLink.first().parent().attr('href');
+			$('.data-vkontakte').attr('href', href);
+			$('.data-vkontakte-footer').attr('href', href);
+			$vkLink.hide();
+		} else {
+			$('.data-vkontakte').parent().hide();
+			$('.data-vkontakte-footer').parent().hide();
+		}
+
 		//Sponsor widget
 		$(".js-widget-close").on("click", function (event) {
 			event.preventDefault();
@@ -58,7 +83,7 @@
 					items:5
 				}
 			}
-		})
+		});
 
 		//How Use JS
 		$('.how-use-slider').owlCarousel({
@@ -79,7 +104,7 @@
 					items:1
 				}
 			}
-		})
+		});
 
 
 		//Tsetimonial Slider JS
@@ -106,7 +131,7 @@
 					items:1,
 				}
 			}
-		})
+		});
 
 		//Home Popup Video
 		$('.popup-vimeo').magnificPopup({
@@ -139,7 +164,7 @@
 					items:5
 				}
 			}
-		})
+		});
 
 		//Testimonial Slider JS
 		$('.testimonial-slider-area').owlCarousel({
@@ -153,12 +178,6 @@
 			dots:false,
 			smartSpeed:2000,
 			items:1
-		})
-
-		//Counter JS
-		$('.counter').counterUp({
-			delay: 15,
-			time: 2000
 		});
 
 		//Company Slider JS
@@ -181,7 +200,7 @@
 					items:3
 				}
 			}
-		})
+		});
 
 		//Testimonial Slider JS
 		$('.testimonial-slider-wrapper').owlCarousel({
@@ -191,7 +210,7 @@
 			dots:false,
 			smartSpeed:2000,
 			items:1
-		})
+		});
 
 		//Team Slider JS
 		$('.team-slider').owlCarousel({
@@ -211,7 +230,7 @@
 					items:4
 				}
 			}
-		})
+		});
 
 		//Slick Slider Testimonial
 		$('.slider-for').slick({
@@ -272,54 +291,6 @@
             $("html, body").animate({ scrollTop: 0 }, 3000);
             return false;
         });
-	
-		
-		// Subscribe form
-		$(".newsletter-form").validator().on("submit", function (event) {
-			if (event.isDefaultPrevented()) {
-			// handle the invalid form...
-				formErrorSub();
-				submitMSGSub(false, "Пожалуйста, введите email без ошибок");
-			} else {
-				// everything looks good!
-				event.preventDefault();
-			}
-		});
-		function callbackFunction (resp) {
-			if (resp.result === "success") {
-				formSuccessSub();
-			}
-			else {
-				formErrorSub();
-			}
-		}
-		function formSuccessSub(){
-			$(".newsletter-form")[0].reset();
-			submitMSGSub(true, "Thank you for subscribing!");
-			setTimeout(function() {
-				$("#validator-newsletter").addClass('hide');
-			}, 4000)
-		}
-		function formErrorSub(){
-			$(".newsletter-form").addClass("animated shake");
-			setTimeout(function() {
-				$(".newsletter-form").removeClass("animated shake");
-			}, 1000)
-		}
-		function submitMSGSub(valid, msg){
-			if(valid){
-				var msgClasses = "validation-success";
-			} else {
-				var msgClasses = "validation-danger";
-			}
-			$("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
-		}
-		
-		// AJAX MailChimp
-		$(".newsletter-form").ajaxChimp({
-			url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
-			callback: callbackFunction
-		});
 
 		// Showcase Portfolio
 		$('#Container').mixItUp();	
