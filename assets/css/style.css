@@ -306,6 +306,8 @@ ul {
 }
 .form .error {
   color: #ffffff;
+}
+.form:not(.subscribeform) .error {
   transform: translateY(-45px);
 }
 .form .name-input {

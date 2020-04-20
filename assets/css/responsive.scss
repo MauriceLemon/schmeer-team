@@ -154,6 +154,10 @@
     }
 
     .form {
+        .error {
+            transform: translateY(0);
+        }
+
         .name {
             &-input {
                 width: 90% !important;

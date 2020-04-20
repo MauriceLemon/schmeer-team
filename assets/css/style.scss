@@ -372,7 +372,12 @@ ul {
 
     .error {
         color: $white-color;
-        transform: translateY(-45px);
+    }
+
+    &:not(.subscribeform) {
+        .error {
+            transform: translateY(-45px);
+        }
     }
 
     .name {

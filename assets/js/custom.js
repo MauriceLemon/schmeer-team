@@ -1,6 +1,6 @@
 (function($) {
 	'use strict';
-	jQuery(document).on('ready', function(){
+	$(document).ready(function(){
 		//Dynamic social links management
 		$('p.data:empty').parent().hide();
 
