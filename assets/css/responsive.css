@@ -500,6 +500,9 @@
     margin: 0 10px;
     font-size: 11px;
   }
+  .navbar #navbar-btn--mobile a {
+    font-size: 13px;
+  }
   .navbar .navbar-brand img {
     max-width: 100px;
   }
@@ -755,6 +758,15 @@
   }
 
   /* Banner CSS */
+  .navbar-nav .nav-item .nav-link {
+    padding: 0;
+    margin: 0 10px;
+    font-size: 13px;
+  }
+  .navbar-nav #navbar-btn--mobile a {
+    font-size: 13px;
+  }
+
   .main-banner {
     background: linear-gradient(to right bottom, #293644, #191a2f);
   }
@@ -890,6 +902,9 @@
   }
 
   /* Footer CSS */
+  .footer-area {
+    font-size: 14px;
+  }
   .footer-area .footer-widget h3 {
     margin-bottom: 30px;
   }

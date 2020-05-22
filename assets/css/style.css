@@ -589,6 +589,9 @@ ul {
 
 /* Banner Section CSS End */
 /* Service CSS Start */
+.service-style-four {
+  margin-top: 60px;
+}
 .service-style-four .service-card {
   text-align: left;
   padding: 35px;
@@ -1122,6 +1125,9 @@ ul {
 }
 .footer-area .pl-90 {
   padding-left: 90px;
+}
+.footer-area .pl-45 {
+  padding-left: 45px;
 }
 .footer-area .copyright-area {
   border-top: 1px solid #373853;
