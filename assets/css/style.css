@@ -293,6 +293,27 @@ ul {
   background-image: url(../img/app-landing/banner-bg.png);
 }
 
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 1rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 3.2rem;
+  font-weight: 800;
+  animation: moveInLeft 600ms ease-out;
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 5.4rem;
+  font-weight: 800;
+  color: #37AF7C;
+  line-height: 1;
+  animation: moveInLeft 600ms ease-out;
+}
+
 .form {
   margin-top: 45px;
 }
@@ -567,101 +588,66 @@ ul {
 }
 
 /* Banner Section CSS End */
-/* Why Choose Section CSS Start */
-.why-choose {
-  position: relative;
-}
-.why-choose::after {
-  position: absolute;
-  content: "";
-  background-image: url(../img/map-two.png);
-  background-position: center center;
-  background-size: cover;
-  right: 0;
-  top: 125px;
-  width: 250px;
-  height: 310px;
-  opacity: 0.5;
-  animation: translateY 10s infinite linear;
-}
-.why-choose .section-title {
-  margin: 0 0 60px;
+/* Service CSS Start */
+.service-style-four .service-card {
   text-align: left;
-}
-.why-choose .section-title p {
-  margin: 0;
-}
-.why-choose .why-choose-img {
+  padding: 35px;
+  border-radius: 30px 0 30px 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
   position: relative;
-}
-.why-choose .why-choose-img::before {
-  position: absolute;
-  content: "";
-  width: 195px;
-  height: 195px;
-  background: #ffebc5;
-  top: -50px;
-  right: -55px;
-  z-index: -1;
-  border-radius: 50px;
-  animation: translateY 5s infinite linear;
-}
-.why-choose .why-choose-img img {
-  border-radius: 45px;
-  width: 100%;
-  animation: translateY 10s infinite linear;
-}
-.why-choose .why-choose-text .media {
-  margin-bottom: 55px;
-}
-.why-choose .why-choose-text .media i {
-  font-size: 35px;
-  position: relative;
-  color: #ffffff;
-  top: 30px;
-  left: 25px;
   z-index: 0;
-  line-height: 1;
+  height: 95%;
 }
-.why-choose .why-choose-text .media i::after {
+.service-style-four .service-card:hover::before {
+  height: 100%;
+}
+.service-style-four .service-card::before {
   position: absolute;
   content: "";
-  width: 65px;
-  height: 65px;
-  top: -15px;
-  left: -16px;
-  background: linear-gradient(-40deg, #c94776 3%, #e54f4f 100%);
-  border-radius: 15px;
-  transform: rotate(45deg);
+  background: linear-gradient(to right bottom, #9cb6bf, #edf7fc, #92a8b3);
+  width: 100%;
+  height: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px 0 30px 30px;
   z-index: -1;
+  transition: 0.5s;
 }
-.why-choose .why-choose-text .media i.fa-graduation-cap::after {
-  background: linear-gradient(0deg, #37AF7C 25%, #2e9c71 100%);
+.service-style-four .service-card:hover i {
+  color: #37AF7C;
 }
-.why-choose .why-choose-text .media i.fa-graduation-cap:before {
-  transform: translateX(-5px);
+.service-style-four .service-card:hover i {
+  background: #191a2f;
+}
+.service-style-four .service-card i {
+  text-align: center;
+  color: #37AF7C;
+  font-size: 35px;
+  margin-bottom: 25px;
   display: inline-block;
+  transition: 0.5s;
+  width: 70px;
+  height: 70px;
+  background: #a7f7d2;
+  border-radius: 50px;
+  line-height: 70px;
 }
-.why-choose .why-choose-text .media i.fa-user-chart::after {
-  background: linear-gradient(0deg, #4e5193 25%, #777ab7 100%);
-}
-.why-choose .why-choose-text .media i.fa-user-chart:before {
-  transform: translateX(-5px);
-  display: inline-block;
-}
-.why-choose .why-choose-text .media i.flaticon-wallet::after {
-  background: linear-gradient(0deg, #e7a01a 25%, #fec454 100%);
-}
-.why-choose .why-choose-text .media .media-body {
-  padding-left: 55px;
-}
-.why-choose .why-choose-text .media .media-body h3 {
-  font-size: 24px;
-  font-weight: 600;
+.service-style-four .service-card h3 {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 10px;
+  transition: 0.5s;
+  font-weight: 600;
+}
+.service-style-four .service-card p {
+  margin-bottom: 0;
+  transition: 0.5s;
+  font-size: 13px;
 }
 
-/* Why Choose Section CSS End */
+/* Service CSS End */
 /* Registers Section CSS Start */
 .registers-section {
   background: #ecf2ff;
@@ -695,6 +681,7 @@ ul {
 .software-section {
   background: linear-gradient(to right bottom, #191a2f, #191a2f, #203458);
   position: relative;
+  margin-bottom: 60px;
 }
 .software-section::before {
   position: absolute;
@@ -855,544 +842,6 @@ ul {
 }
 
 /* Software CSS End */
-/* Features Section CSS Start */
-.feature-section .feature-card {
-  background: #ffffff;
-  border-radius: 20px 0 20px 0;
-  text-align: center;
-  padding: 65px 25px 35px;
-  box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
-  margin-bottom: 30px;
-  transition: 0.5s;
-}
-.feature-section .feature-card:hover {
-  background: linear-gradient(to right bottom, #191a2f, #4183c1);
-}
-.feature-section .feature-card:hover i, .feature-section .feature-card:hover h3, .feature-section .feature-card:hover p {
-  color: #ffffff !important;
-}
-.feature-section .feature-card:hover i::after {
-  background: #37AF7C;
-}
-.feature-section .feature-card i {
-  font-size: 30px;
-  color: #485592;
-  margin-bottom: 45px;
-  display: inline-block;
-  position: relative;
-  z-index: 0;
-  transition: all 0.5s;
-  line-height: 1;
-}
-.feature-section .feature-card i::after {
-  position: absolute;
-  content: "";
-  width: 70px;
-  height: 70px;
-  background: #dfe7ff;
-  top: -20px;
-  left: -20px;
-  z-index: -1;
-  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-.feature-section .feature-card h3 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  transition: 0.5s;
-}
-.feature-section .feature-card p {
-  margin-bottom: 0;
-  transition: 0.5s;
-}
-.feature-section .active {
-  background: linear-gradient(to right bottom, #191a2f, #4183c1);
-}
-.feature-section .active i, .feature-section .active h3, .feature-section .active p {
-  color: #ffffff;
-}
-.feature-section .active i::after {
-  background: #37AF7C;
-}
-.feature-section .feature-btn {
-  margin: 60px auto 0 auto;
-}
-.feature-section .feature-btn a {
-  color: #0f2137;
-  border: 1px solid #0f2137;
-  padding: 0 30px 0px;
-  line-height: 1;
-  border-radius: 50px;
-  margin-right: 25px;
-}
-.feature-section .feature-btn a i {
-  top: 15px;
-  position: relative;
-  left: 0;
-  font-size: 30px;
-  line-height: 1;
-}
-.feature-section .feature-btn a p {
-  margin: 0 0 10px;
-  padding-left: 40px;
-  font-size: 14px;
-  font-family: "Open Sans", sans-serif;
-  line-height: 0;
-  top: -10px;
-  position: relative;
-}
-.feature-section .feature-btn a h5 {
-  margin: 0;
-  padding-left: 40px;
-  font-size: 17px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  transition: 0.5s;
-  top: -13px;
-  position: relative;
-}
-.feature-section .feature-btn a:hover {
-  background: linear-gradient(0deg, #37AF7C 25%, #2e9c71 100%);
-  color: #ffffff;
-  border: 1px solid transparent;
-}
-.feature-section .feature-btn a:hover h5 {
-  color: #ffffff;
-}
-.feature-section .feature-btn .active {
-  background: linear-gradient(0deg, #37AF7C 25%, #2e9c71 100%);
-  color: #ffffff;
-  border: 1px solid transparent;
-}
-.feature-section .feature-btn .active h5 {
-  color: #ffffff;
-}
-
-/* Features Section CSS End */
-/* Screenshots Section CSS Start */
-.screenshots-section {
-  background: #e2f4fe;
-  position: relative;
-  padding-bottom: 90px;
-}
-.screenshots-section .section-title {
-  max-width: 600px;
-}
-.screenshots-section .screenshot-slider .screenshoot-img {
-  margin-bottom: 30px;
-}
-.screenshots-section .screenshot-slider .screenshoot-img img {
-  border-radius: 35px;
-}
-.screenshots-section .screenshot-slider .owl-stage {
-  padding-top: 30px;
-}
-.screenshots-section .screenshot-slider .center {
-  margin-top: -30px;
-  transition: 1s;
-}
-.screenshots-section .screenshot-slider .center img {
-  box-shadow: 0px 12px 28px rgba(72, 73, 121, 0.1);
-}
-.screenshots-section .screenshot-slider .owl-dot span {
-  width: 5px;
-  height: 5px;
-  background: #37AF7C !important;
-  margin: 0 3px;
-  border-radius: 3px;
-}
-.screenshots-section .screenshot-slider .owl-dot.active {
-  width: 25px;
-  background: #37AF7C !important;
-  border-radius: 5px;
-}
-.screenshots-section .screenshot-shape img {
-  position: absolute;
-}
-.screenshots-section .screenshot-shape :nth-child(1) {
-  top: 40px;
-  left: 100px;
-  animation: translateX 10s infinite linear;
-}
-.screenshots-section .screenshot-shape :nth-child(2) {
-  top: 200px;
-  left: 150px;
-  animation: translateY 10s infinite linear;
-}
-.screenshots-section .screenshot-shape :nth-child(3) {
-  top: 100px;
-  left: 300px;
-  animation: translateX 10s infinite linear;
-}
-.screenshots-section .screenshot-shape :nth-child(4) {
-  right: 300px;
-  top: 20px;
-  animation: translateY 10s infinite linear;
-}
-.screenshots-section .screenshot-shape :nth-child(5) {
-  right: 400px;
-  top: 270px;
-  animation: translateX 10s infinite linear;
-}
-.screenshots-section .screenshot-shape :nth-child(6) {
-  right: 100px;
-  top: 100px;
-  animation: translateY 10s infinite linear;
-}
-
-/* Screenshots Section CSS End */
-/* How Use Section CSS Start */
-.how-use {
-  position: relative;
-}
-.how-use::before {
-  position: absolute;
-  content: "";
-  background-image: url(../img/map-two.png);
-  background-position: center center;
-  background-size: cover;
-  width: 190px;
-  height: 250px;
-  top: 250px;
-  left: 0;
-  opacity: 0.5;
-}
-.how-use .how-use-card {
-  text-align: center;
-  box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
-  border-radius: 20px;
-  position: relative;
-  padding: 45px 20px;
-  margin-bottom: 30px;
-  background: #ffffff;
-}
-.how-use .how-use-card span {
-  position: absolute;
-  right: 25px;
-  top: 10px;
-  font-size: 30px;
-  display: inline-block;
-  font-weight: 700;
-}
-.how-use .how-use-card i {
-  font-size: 60px;
-  display: inline-block;
-  margin-bottom: 15px;
-  line-height: 1;
-}
-.how-use .how-use-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 0;
-}
-.how-use .how-card-one h3 {
-  font-size: 20px;
-}
-.how-use .how-card-one span {
-  color: #99d6b0;
-}
-.how-use .how-card-one i {
-  background: linear-gradient(0deg, #37AF7C 25%, #2e9c71 100%);
-  background-clip: text;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.how-use .how-card-two span {
-  color: #f8e0b3;
-}
-.how-use .how-card-two i {
-  background: linear-gradient(to top, #e7a019 0%, #fdc251 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-}
-.how-use .how-card-three span {
-  color: #9959fe;
-}
-.how-use .how-card-three i {
-  background: linear-gradient(to top, #8a50e5 0%, #9959ff 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-}
-.how-use .how-card-four span {
-  color: #a8ddf7;
-}
-.how-use .how-card-four i {
-  background: linear-gradient(to top, #01b4ed 0%, #0899e7 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-}
-.how-use .how-use-slider {
-  position: relative;
-  z-index: 0;
-}
-.how-use .how-use-slider::before {
-  position: absolute;
-  content: "";
-  width: 195px;
-  height: 195px;
-  background: #bfe8ff;
-  top: -50px;
-  left: -55px;
-  z-index: -1;
-  border-radius: 50px;
-  animation: translateX 10s infinite linear;
-}
-.how-use .how-use-slider::after {
-  position: absolute;
-  content: "";
-  background-image: url(../img/shape/pattern-two.png);
-  background-position: center center;
-  background-size: cover;
-  width: 285px;
-  height: 224px;
-  right: -50px;
-  bottom: 105px;
-  z-index: -1;
-  animation: translateY 10s infinite linear;
-}
-.how-use .how-use-slider img {
-  border-radius: 45px;
-  width: 100%;
-}
-.how-use .how-use-slider .owl-dot span {
-  width: 5px;
-  height: 5px;
-  background: #37AF7C !important;
-  margin: 0 3px;
-  border-radius: 3px;
-}
-.how-use .how-use-slider .owl-dot.active {
-  width: 25px;
-  background: #37AF7C !important;
-  border-radius: 5px;
-}
-
-/* How Use Section CSS End */
-/* Price Section CSS Start */
-.pricing-section {
-  padding-top: 70px;
-}
-.pricing-section .plan-list ul {
-  padding-left: 0;
-  margin-bottom: 60px;
-  border: 0;
-  display: inline-block;
-}
-.pricing-section .plan-list ul li {
-  display: inline-block;
-}
-.pricing-section .plan-list ul li a {
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  color: #0898e7;
-  padding: 15px 35px;
-  border: 1px solid #0898e7;
-  cursor: pointer;
-  border-radius: 50px;
-  display: inline-block;
-  margin: 0 5px;
-  transition: 0.5s;
-}
-.pricing-section .plan-list ul li a:hover {
-  background: #0898e7;
-  color: #ffffff;
-  border: 1px solid transparent;
-}
-.pricing-section .plan-list ul li .active {
-  background: #0898e7;
-  color: #ffffff;
-  border: 1px solid transparent;
-}
-.pricing-section .price-card {
-  position: relative;
-  padding: 16px;
-  border: 1px solid #dfe7ff;
-  border-radius: 30px;
-  text-align: center;
-  box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
-  transition: 0.5s;
-  margin-bottom: 30px;
-  overflow: hidden;
-}
-.pricing-section .price-card--1:hover {
-  background-color: #ecf2ff;
-}
-.pricing-section .price-card--1:hover .price-feature ul li i {
-  color: #aaaaaa;
-}
-.pricing-section .price-card--2:hover {
-  background-color: #3c3d44;
-}
-.pricing-section .price-card--2:hover p, .pricing-section .price-card--2:hover h3, .pricing-section .price-card--2:hover .price-feature ul li, .pricing-section .price-card--2:hover .price-feature ul li i {
-  color: rgba(255, 255, 255, 0.8);
-}
-.pricing-section .price-card--3::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to right bottom, #BF953F, #FCF6BA, #B38728);
-  z-index: -1;
-  transition: opacity 0.5s linear;
-  opacity: 0;
-}
-.pricing-section .price-card--3:hover::before {
-  opacity: 1;
-}
-.pricing-section .price-card--3:hover h3, .pricing-section .price-card--3:hover .price-feature ul li i {
-  color: #343d48;
-}
-.pricing-section .price-card--4::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to right bottom, #9cb6bf, #edf7fc, #92a8b3);
-  z-index: -1;
-  transition: opacity 0.5s linear;
-  opacity: 0;
-}
-.pricing-section .price-card--4:hover::before {
-  opacity: 1;
-}
-.pricing-section .price-card--4:hover h3, .pricing-section .price-card--4:hover .price-feature ul li i {
-  color: #343d48;
-}
-.pricing-section .price-card p {
-  color: #343d48;
-  font-size: 22px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  margin-bottom: 0;
-  line-height: 1;
-  margin-bottom: 10px;
-  transition: 0.5s;
-}
-.pricing-section .price-card h3 {
-  font-size: 40px;
-  font-weight: 300;
-  color: #37AF7C;
-  margin-bottom: 30px;
-  transition: 0.5s;
-}
-.pricing-section .price-card h3 span {
-  font-size: 15px;
-  font-weight: 400;
-}
-.pricing-section .price-card .price-card__image img {
-  height: 100px;
-  margin: 30px 0;
-}
-.pricing-section .price-card .price-card__heading--white {
-  color: #aaaaaa;
-}
-.pricing-section .price-card .price-card__heading--black {
-  color: #191a2f;
-}
-.pricing-section .price-card .price-card__heading--gold {
-  color: #E1B34E;
-}
-.pricing-section .price-card .price-card__heading--titanium {
-  color: #84ADD4;
-}
-.pricing-section .price-card .price-feature {
-  text-align: left;
-}
-.pricing-section .price-card .price-feature ul {
-  margin-bottom: 40px;
-  line-height: 1;
-  margin-top: 30px;
-  padding-left: 10px;
-}
-.pricing-section .price-card .price-feature ul li {
-  font-size: 14px;
-  color: #343d48;
-  margin-bottom: 20px;
-  transition: 0.5s;
-  display: block;
-}
-.pricing-section .price-card .price-feature ul li i {
-  color: #37AF7C;
-  transition: 0.5s;
-  font-size: 14px;
-  margin-right: 5px;
-}
-.pricing-section .price-card .price-feature ul :nth-child(5), .pricing-section .price-card .price-feature ul :nth-child(6), .pricing-section .price-card .price-feature ul :nth-child(7), .pricing-section .price-card .price-feature ul :nth-child(8) {
-  opacity: 0.5;
-}
-.pricing-section .price-card .price-feature ul :last-child {
-  margin-bottom: 0;
-}
-.pricing-section .price-card .price-btn {
-  z-index: 1;
-}
-.pricing-section .price-card .price-btn a {
-  font-size: 16px;
-  padding: 10px 40px;
-  margin-bottom: 20px;
-  color: #191a2f;
-  background: #ffffff;
-  font-weight: 600;
-  border-radius: 50px;
-  box-shadow: 7px 5px 30px rgba(72, 73, 121, 0.15);
-  z-index: 1;
-  transition: all 200ms;
-  position: relative;
-}
-.pricing-section .price-card .price-btn a:hover {
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
-.pricing-section .price-card .price-btn a:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-.pricing-section .price-card .price-btn a:active, .pricing-section .price-card .price-btn a:focus {
-  outline: none;
-  transform: translateY(3px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-.pricing-section .price-card .price-btn a::after {
-  content: "";
-  background-color: #ffffff;
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 400ms;
-}
-.pricing-section .business-class .price-feature ul :nth-child(5), .pricing-section .business-class .price-feature ul :nth-child(6) {
-  opacity: 1;
-}
-.pricing-section .business-class .price-feature ul :nth-child(7), .pricing-section .business-class .price-feature ul :nth-child(8) {
-  opacity: 0.5;
-}
-.pricing-section .premium .price-feature ul :nth-child(5), .pricing-section .premium .price-feature ul :nth-child(6), .pricing-section .premium .price-feature ul :nth-child(7), .pricing-section .premium .price-feature ul :nth-child(8) {
-  opacity: 1;
-}
-.pricing-section .active-price {
-  background: #05a3ea;
-}
-.pricing-section .active-price p, .pricing-section .active-price h3, .pricing-section .active-price .price-feature ul li, .pricing-section .active-price .price-feature ul li i {
-  color: #ffffff;
-}
-
-/* Price Section CSS End */
 /* Testimonial Section CSS Start */
 .testimonial-section {
   position: relative;
@@ -1450,6 +899,7 @@ ul {
 .testimonial-section .testimonial-slider .testimonial-item img {
   margin-bottom: 15px;
   width: 70px;
+  border-radius: 50%;
 }
 .testimonial-section .testimonial-slider .testimonial-item .client-info {
   margin-bottom: 20px;
@@ -1764,6 +1214,19 @@ ul {
 }
 /* Preloader CSS End */
 /* Animation CSS Start */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translate(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 @keyframes fadeInDown {
   0% {
     opacity: 0;
