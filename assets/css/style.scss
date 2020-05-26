@@ -745,26 +745,56 @@ ul {
             transition: .5s;
         }
 
-        &:hover i {
+        &:hover .icon-1,
+        &:hover .icon-2,
+        &:hover .icon-3,
+        &:hover .icon-4,
+        &:hover .icon-5,
+        &:hover .icon-6 {
             color: $green-color;
-        }
-
-        &:hover i {
             background: $violet-color-dark;
         }
 
         i {
             text-align: center;
-            color: $green-color;
             font-size: 35px;
             margin-bottom:25px;
             display: inline-block;
             transition: .5s;
             width: 70px;
             height: 70px;
-            background: $green-light-color;
             border-radius: 50px;
             line-height: 70px;
+
+            &.icon-1 {
+                color: $green-color;
+                background: $green-light-color;
+            }
+
+            &.icon-2 {
+                color: #af8d1f;
+                background: #eff7b2;
+            }
+
+            &.icon-3 {
+                color: #af5e58;
+                background: #f7d5d3;
+            }
+
+            &.icon-4 {
+                color: #35a0af;
+                background: #a9f7f7;
+            }
+
+            &.icon-5 {
+                color: #4068af;
+                background: #c3d4f7;
+            }
+
+            &.icon-6 {
+                color: #484a61;
+                background: #b0cce5;
+            }
         }
 
         h3 {

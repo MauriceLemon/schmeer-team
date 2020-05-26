@@ -618,24 +618,44 @@ ul {
   z-index: -1;
   transition: 0.5s;
 }
-.service-style-four .service-card:hover i {
+.service-style-four .service-card:hover .icon-1, .service-style-four .service-card:hover .icon-2, .service-style-four .service-card:hover .icon-3, .service-style-four .service-card:hover .icon-4, .service-style-four .service-card:hover .icon-5, .service-style-four .service-card:hover .icon-6 {
   color: #37AF7C;
-}
-.service-style-four .service-card:hover i {
   background: #191a2f;
 }
 .service-style-four .service-card i {
   text-align: center;
-  color: #37AF7C;
   font-size: 35px;
   margin-bottom: 25px;
   display: inline-block;
   transition: 0.5s;
   width: 70px;
   height: 70px;
-  background: #a7f7d2;
   border-radius: 50px;
   line-height: 70px;
+}
+.service-style-four .service-card i.icon-1 {
+  color: #37AF7C;
+  background: #a7f7d2;
+}
+.service-style-four .service-card i.icon-2 {
+  color: #af8d1f;
+  background: #eff7b2;
+}
+.service-style-four .service-card i.icon-3 {
+  color: #af5e58;
+  background: #f7d5d3;
+}
+.service-style-four .service-card i.icon-4 {
+  color: #35a0af;
+  background: #a9f7f7;
+}
+.service-style-four .service-card i.icon-5 {
+  color: #4068af;
+  background: #c3d4f7;
+}
+.service-style-four .service-card i.icon-6 {
+  color: #484a61;
+  background: #b0cce5;
 }
 .service-style-four .service-card h3 {
   font-size: 17px;
